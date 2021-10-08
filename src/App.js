@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import ToDoListItem from "./ToDoListItem.js"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <form
+          className="App-form"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <div>
+            <input
+              id="title"
+              placeholder="title"
+            />
+            <textarea
+              id="description"
+              placeholder="description"
+            />
+          </div>
+          <div>
+            <button
+              type="submit"
+            >
+             登録
+            </button>
+          </div>
+        </form>
+        <div>
+          <ToDoListItem
+            title="ホームページ作成"
+            description="サークルホームページを今週中に作成する"
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
